@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang ="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table>
+<tr>
+	<th> ID </th>
+	<th> NAME </th>
+</tr>
+<tr th:each= "stu :${stuList}">
+<td>[[${stu.id}]]</td>
+<td>[[${stu.name}]]</td>
+<td><a th:href="@{/delete/{id}(id = ${stu.id})}">DELETE</a></td>
+<td><a th:href="@{/edit/{id}(id = ${stu.id})}">EDIT</a></td>
+</tr>
+</table>
+</body>
+</html>
